@@ -16,7 +16,7 @@ WHERE `cfu` > 10;
 
 SELECT *
 FROM `students`
-WHERE YEAR(`date_of_birth`) <= YEAR(CURRENT_DATE) - 30
+WHERE YEAR(`date_of_birth`) < YEAR(CURRENT_DATE) - 30
 AND DAYOFYEAR(`date_of_birth`) <= DAYOFYEAR(CURRENT_DATE);
 
 

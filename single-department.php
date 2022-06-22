@@ -17,7 +17,7 @@ $id = $_GET["id"];
 $stmt->execute();
 $result = $stmt->get_result();
 
-var_dump($result);
+// var_dump($result);
 
 $departments = [];
 
@@ -45,11 +45,11 @@ if($result && $result->num_rows > 0) {
 </head>
 <body>
 
-<a href="inde.php">Ritorna all'elenco</a>
+<a href="index.php">Ritorna all'elenco</a>
 
   <?php foreach($departments as $department) {?>
     <h1><?php echo $department->name ?></h1>
-    <p> <?php echo $department->head_of_department ?> </p>
+    <p> Coordinatore: <?php echo $department->head_of_department ?> </p>
     <h2>contatti</h2>
     <ul>
       <?php foreach($department->getContactsAsArray() as $key => $value) { ?>
